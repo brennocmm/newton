@@ -1,0 +1,111 @@
+@media screen and (max-width: 1120px) {
+	.container {
+		padding: 0 20px;
+	}
+	#quem-somos .text {
+		padding: 0 2em 0 3em;
+	}
+	#equipe .text {
+		padding-right: 7em;
+	}
+	#nosso-espaco .text {
+		padding-right: 7em;
+	}
+	footer .row {
+		flex-direction: column;
+		align-items: center;
+    	row-gap: 20px;
+	}
+	footer .col-33 {
+		width: 100%;
+	}
+	footer .redes-sociais {
+		justify-content: center;
+	}
+	footer hr {
+		margin: 30px 0;
+	}
+}
+@media screen and (max-width: 992px) {
+	#quem-somos .text {
+	    padding: 0 0 0 2em;
+	}
+	#equipe .text, #nosso-espaco .text {
+	    padding-right: 1em;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#banner {
+		height: 100%;
+	}
+	#banner .banner {
+		text-align: center;
+	}
+	#banner .slick-banners {
+		height: calc(100vh - 100px);
+	}
+	#banner .banner .text h2 {
+		font-size: 40px;
+		line-height: 50px;
+	}
+	#banner .banner .text h6 {
+		font-size: 25px;
+    	line-height: 31px;
+	}
+	#quem-somos .row {
+    	flex-direction: column;
+    	row-gap: 40px;
+	}
+	#quem-somos .col, #equipe .col, #nosso-espaco .col, #fale-conosco .block-2 form .col {
+		text-align: center;
+		width: 100%;
+	}
+	#quem-somos .text, #equipe .text, #nosso-espaco .text {
+		padding: 0 40px;
+	}
+	#quem-somos img, #equipe img {
+		border-radius: 20px;
+		max-width: 400px;
+		width: 100%;
+	}
+	#quem-somos a {
+		margin: auto;
+	}
+	#equipe .row {
+    	flex-direction: column-reverse;
+    	row-gap: 40px;
+	}
+	#nosso-espaco .row {
+		flex-direction: column;
+	}
+	#nosso-espaco h2:after, #equipe h2:after, #quem-somos h2:after {
+	    top: 0;
+	    left: 0;
+	    bottom: 0;
+	    right: 0;
+	    margin: auto;
+	    margin-top: 40px;
+	}
+	#nosso-espaco p {
+		margin-bottom: 0;
+	}
+	#nosso-espaco .slick-container .slick-arrows {
+		justify-content: center;
+	}
+	#fale-conosco .block-1 .contatos {
+		column-gap: 0;
+	}
+	#fale-conosco .block-2 form {
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	#quem-somos .text, #equipe .text, #nosso-espaco .text {
+		padding: 0;
+	}
+	#fale-conosco .block-2 {
+		padding: 65px 20px;
+	}
+}
