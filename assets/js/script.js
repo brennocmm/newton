@@ -28,4 +28,8 @@ $(document).ready(function(){
 		autoplaySpeed: 5000,
 	});
 
+	// Removendo erro do form
+	setTimeout( function(e) {
+		$('.form-output').fadeOut();
+	}, 5000);
 });

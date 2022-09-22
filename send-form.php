@@ -10,12 +10,7 @@
 		|| empty( $_POST[ 'assunto' ] )
 		|| empty( $_POST[ 'mensagem' ] )
 	){
-		header( 'Content-Type: application/json' );
-		die( json_encode( [
-			'success' => false,
-			'data' => $_POST,
-			'error' => 'missing_field'
-		] ) );
+		header( 'Location: index.php?send-mail=0#fale-conosco' );
 	}
 
 	// Recebendo os dados da LP
@@ -38,15 +33,8 @@
 	$envio = send_email( $destinatarios, $subject, $body );
 
 	// Validandando ser foi enviando o e-mail
-	if( $envio ) {
-		header( 'Content-Type: application/json' );
-		die( json_encode( [
-			'success' => false,
-			'error' => $envio,
-		] ) );
-	}
-	$success = $error ? 0 : 1;
-	header( 'Location: index.php?send-mail='. $success .'#fale-conosco' );
+	$results = $envio ? 1 : 0;
+	header( 'Location: index.php?send-mail='. $results .'#fale-conosco' );
 
 
 	// Função para o envio dos e-mails

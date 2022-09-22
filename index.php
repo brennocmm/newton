@@ -197,8 +197,7 @@
 			<div class="row">
 				<div class="block-2">
 					<?php
-						$send_form = (@$_GET['send-mail'] ? $_GET['send-mail'] : "");
-						
+						$send_form = (@$_GET['send-mail'] ? $_GET['send-mail'] : 0);
 						if( $send_form !== '' ){
 							$msg = $send_form == 1
 									? 'Dados cadastrados com sucesso.'
