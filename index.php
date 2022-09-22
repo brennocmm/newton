@@ -6,9 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Project Newton</title>
 
-	<meta property="og:image" content="./assets/images/banner1.jpg" />
+	<meta property="og:image" content="./assets/images/shared.jpg" />
 	<meta property="og:image:width" content="1200" />
-	<meta property="og:image:height" content="425" />
+	<meta property="og:image:height" content="613" />
 	<meta property="og:locale" content="pt_BR" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Project Newton" />
@@ -17,12 +17,12 @@
 	<meta property="og:description" content="Project Newton" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Project Newton" />
-	<meta name="twitter:image" content="./assets/images/banner1.jpg" />
+	<meta name="twitter:image" content="./assets/images/shared.jpg" />
 	<meta name="twitter:image:width" content="1200" />
-	<meta name="twitter:image:height" content="425" />
+	<meta name="twitter:image:height" content="613" />
 
 	<!-- Icons -->
-	<link rel="shortcut icon" type="image/x-icon" href="./assets/images/logo.png">
+	<link rel="shortcut icon" type="image/x-icon" href="./assets/images/icone.ico">
 
 	<!-- CSS Styles -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
@@ -43,19 +43,23 @@
 					<img src="./assets/images/logo-dark.png" alt="" width="120" height="58">
 				</div>
 				<div class="menu-container">
+					<a href="#" class="icon-mobile">
+						<i class="fa fa-bars"></i>
+					</a>
+					<input type="checkbox" id="nav-cb" hidden />
 					<nav>
 						<ul class="menu-lista">
 							<li><a href="#quem-somos">Quem somos</a></li>
 							<li><a href="#equipe">Equipe</a></li>
-							<li><a href="#espaco">Espaço</a></li>
-							<li><a href="#contato">Contato</a></li>
+							<li><a href="#nosso-espaco">Espaço</a></li>
+							<li><a href="#fale-conosco">Contato</a></li>
 						</ul>
-						<div class="search">
-							<a href="#">
-								<div class="icon-search"></div>
-							</a>
-						</div>
 					</nav>
+					<div class="search">
+						<a href="#">
+							<div class="icon-search"></div>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -192,21 +196,35 @@
 			</div>
 			<div class="row">
 				<div class="block-2">
-					<form action="" method="post">
+					<?php
+						$send_form = (@$_GET['send-mail'] ? $_GET['send-mail'] : "");
+						
+						if( $send_form !== '' ){
+							$msg = $send_form == 1
+									? 'Dados cadastrados com sucesso.'
+									: 'Houve um erro ao cadastrar seus dados. Tente novamente.'
+									;
+							$class = $send_form == 1 ? 'success' : 'error';
+						?>
+						<div class="form-output is-<?php echo $class ?>"><p><?php echo $msg ?></p></div>
+						<?php
+						}
+					?>
+					<form action="send-form.php" method="post">
 						<div class="col">
 							<div class="input-text">
-								<input type="text" name="name" placeholder="Nome">
+								<input type="text" name="nome" placeholder="Nome" required>
 							</div>
 							<div class="input-text">
-								<input type="email" name="email" placeholder="E-mail">
+								<input type="email" name="email" placeholder="E-mail" required>
 							</div>
 							<div class="input-text">
 								<div class="container-select">
-									<select name="assunto">
-										<option disabled></option>
-										<option>Assunto 1</option>
-										<option>Assunto 2</option>
-										<option>Assunto 3</option>
+									<select name="assunto" required>
+										<option disabled> Selecione </option>
+										<option value="assunto1">Assunto 1</option>
+										<option value="assunto2">Assunto 2</option>
+										<option value="assunto3">Assunto 3</option>
 									</select>
 								</div>
 							</div>

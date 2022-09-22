@@ -1,5 +1,16 @@
 $(document).ready(function(){
 
+	// Menu
+	$( ' .icon-mobile ' ).on( 'click', function( e ){
+		if ( $( '#nav-cb' ).attr( 'checked') ) {
+			$( '#nav-cb' ).removeAttr( 'checked');
+		}else{
+			$( '#nav-cb' ).attr( 'checked', true );
+		}
+		e.preventDefault();
+	} );
+
+	// Slick Banner
 	$('.slick-banners').slick({
 		dots: true,
 		arrows: false,
@@ -7,6 +18,7 @@ $(document).ready(function(){
 		autoplaySpeed: 5000,
 	});
 
+	// Slick Espaço
 	$('.slick-espaco').slick({
 		dots: false,
 		arrows: true,

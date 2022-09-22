@@ -30,6 +30,8 @@
   --silver-b8: #B8B8B8;
   --silver-f1: #F1F1F1BD;
   --orange: #E42313;
+  --success: #43a047;
+  --error: #d32f2f;
 
   --text-font: 'Segoe UI', tahoma, sans-serif;
   --title-font: 'Canaro', arial, sans-serif;
@@ -113,13 +115,21 @@ header .logo {
 }
 header .menu-container {
     width: 70%;
-}
-header .menu-container nav {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
-    height: 100%;
+}
+header .menu-container .icon-mobile {
+    display: none;
+    text-decoration: none;
+    color: var(--silver-dark);
+}
+header .menu-container .icon-mobile i {
+    font-size: 30px;
+}
+header .menu-container #nav-cb:checked + nav { 
+    opacity: 1; 
+    visibility: visible; 
 }
 header .menu-container nav .menu-lista {
     display: flex;
@@ -460,6 +470,19 @@ header .search .icon-search {
     padding: 65px 40px;
     margin: 25px auto 0;
     width: 100%;
+}
+#fale-conosco .block-2 .form-output { 
+    padding: 13px 20px; 
+    border-radius: 10px; 
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 20px;
+}
+#fale-conosco .block-2 .form-output.is-success { 
+    background-color: var(--success);
+}
+#fale-conosco .block-2 .form-output.is-error { 
+    background-color: var(--error); 
 }
 #fale-conosco .block-2 form {
     display: flex;

@@ -36,6 +36,41 @@
 }
 
 @media screen and (max-width: 768px) {
+	header .menu-container { 
+		flex-direction: row-reverse;
+		justify-content: flex-start;
+		column-gap: 20px;
+	}
+	header .menu-container .icon-mobile {
+		height: 100%;
+	    display: flex;
+	    flex-wrap: wrap;
+	    flex-direction: row;
+	    justify-content: flex-end;
+	    align-items: center;
+	    padding-right: 20px;
+	}
+	header .menu-container nav { 
+	    opacity: 0; 
+	    visibility: hidden; 
+	    background: var(--silver-fb);
+	    position: absolute;
+	    right: 0;
+	    top: 100px;
+	    padding: 25px 40px 30px;
+	    align-items: flex-end;
+	    justify-content: flex-start;
+    	flex-direction: column;
+    	border-bottom-left-radius: 20px;
+    	border: 1px solid var(--silver-menu);
+	}
+	header .menu-container nav .menu-lista { 
+	    flex-direction: column;
+    	row-gap: 20px;
+    	align-items: flex-end;
+    	margin-right: 0;
+	}
+
 	#banner {
 		height: 100%;
 	}
